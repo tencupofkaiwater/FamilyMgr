@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/img/skin_angry_bird.jpg</file>
+        <file>Resources/img/skin_angry_bird_small.jpg</file>
+        <file>Resources/img/skin_black_point.jpg</file>
+        <file>Resources/img/skin_black_point_small.jpg</file>
+        <file>Resources/img/skin_blue_sky.jpg</file>
+        <file>Resources/img/skin_blueSkySmall.jpg</file>
+        <file>Resources/img/skin_classic.jpg</file>
+        <file>Resources/img/skin_classic_small.jpg</file>
+        <file>Resources/img/skin_green_world.jpg</file>
+        <file>Resources/img/skin_green_world_small.jpg</file>
+        <file>Resources/img/skin_old_wood.jpg</file>
+        <file>Resources/img/skin_old_wood_small.jpg</file>
+        <file>Resources/img/skin_pink_love.jpg</file>
+        <file>Resources/img/skin_pink_love_small.jpg</file>
+        <file>Resources/img/skin_red_thunder.jpg</file>
+        <file>Resources/img/skin_red_thunder_small.jpg</file>
+        <file>Resources/img/skin_six_years.jpg</file>
+        <file>Resources/img/skin_six_years_small.jpg</file>
+        <file>Resources/img/sys_close.png</file>
+        <file>Resources/img/sys_logo.ico</file>
+        <file>Resources/img/sys_max.png</file>
+        <file>Resources/img/sys_min.png</file>
+        <file>Resources/img/sys_skin.png</file>
+        <file>Resources/img/tool_media.png</file>
+        <file>Resources/img/tool_plan.png</file>
+        <file>Resources/img/tool_utility.png</file>
+        <file>Resources/img/sys_setting.png</file>
+        <file>Resources/img/tool_account.png</file>
+    </qresource>
+</RCC>
