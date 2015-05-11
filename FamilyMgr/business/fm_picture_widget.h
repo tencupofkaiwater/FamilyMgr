@@ -23,7 +23,7 @@ class FMPictureWidget : public FMContentWidget
     Q_OBJECT
 
 public:
-    explicit FMPictureWidget(QWidget *parent = 0);
+    explicit FMPictureWidget(QWidget* parent = 0);
     
 signals:
     

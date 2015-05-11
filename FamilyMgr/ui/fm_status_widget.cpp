@@ -19,24 +19,26 @@
 
 #include "fm_status_widget.h"
 
-FMStatusWidget::FMStatusWidget(QWidget *parent) :
-    QWidget(parent)
+FMStatusWidget::FMStatusWidget(QWidget* parent) : QWidget(parent)
 {
-    QLabel* labelVersion = new QLabel(QStringLiteral("主程序版本:1.0.0.1"), this);
-    QLabel* labelHorse = new QLabel(QStringLiteral("更新时间:2015-01-26"), this);
-    QLabel* labelUpdate = new QLabel(QStringLiteral("检查更新"), this);
-    QLabel* labelConn360 = new QLabel(QStringLiteral("未连接至VP中心"), this);
+    QLabel* labelOldVersion = new QLabel(QStringLiteral("当前版本:1.0.0.1"), this);
+    QLabel* labelTime = new QLabel(QStringLiteral("更新时间:2015-01-26"), this);
+	QLabel* labelNewVersion = new QLabel(QStringLiteral("最新版本:1.0.0.1"), this);
+    QLabel* labelUpdate = new QLabel(QStringLiteral("更新"), this);
 
     QHBoxLayout* mainLayout = new QHBoxLayout(this);
     mainLayout->setMargin(0);
-    mainLayout->addWidget(labelVersion);
-    labelVersion->setContentsMargins(5,0,0,0);
-    mainLayout->addWidget(labelHorse);
+    mainLayout->addWidget(labelOldVersion);
+    labelOldVersion->setContentsMargins(5, 0, 0, 0);
+    mainLayout->addWidget(labelTime);
+
+	mainLayout->addStretch();
+	mainLayout->addWidget(labelNewVersion);
+	labelNewVersion->setContentsMargins(5, 0, 0, 0);
     mainLayout->addWidget(labelUpdate);
-    mainLayout->addStretch();
-    mainLayout->addWidget(labelConn360);
-    labelConn360->setContentsMargins(0,0,40,0);
+	labelUpdate->setContentsMargins(0, 0, 5, 0);
+    
     setLayout(mainLayout);
 
-    setFixedHeight(25);
+    setFixedHeight(30);
 }

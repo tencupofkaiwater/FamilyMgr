@@ -30,6 +30,10 @@ FMTitleWidget::FMTitleWidget(QString& title, QWidget* parent) : QWidget(parent)
 {
 	m_titleLabel = new QLabel(title, this);
 
+	m_loginLabel = new QLabel(QStringLiteral("µÇÂ½"), this);
+
+	m_registLabel = new QLabel(QStringLiteral("×¢²á"), this);
+
     m_btnSkin = new FMPushButton("Resources/img/sys_skin.png", QStringLiteral("»»·ô"), this);
     connect(m_btnSkin, SIGNAL(clicked()), this, SIGNAL(doSkin()));
 
@@ -49,6 +53,11 @@ FMTitleWidget::FMTitleWidget(QString& title, QWidget* parent) : QWidget(parent)
     mainLayout->addWidget(m_titleLabel, 0, Qt::AlignVCenter);
     m_titleLabel->setContentsMargins(5, 0, 0, 0);
     mainLayout->addStretch();
+	
+	mainLayout->addWidget(m_loginLabel, 0, Qt::AlignVCenter);
+	m_loginLabel->setContentsMargins(0, 0, 10, 0);
+	mainLayout->addWidget(m_registLabel, 0, Qt::AlignVCenter);
+	m_registLabel->setContentsMargins(0, 0, 20, 0);
     mainLayout->addWidget(m_btnSkin, 0, Qt::AlignVCenter);
     m_btnSkin->setContentsMargins(0, 0, 5, 0);
     mainLayout->addWidget(m_btnSetting);
@@ -59,7 +68,7 @@ FMTitleWidget::FMTitleWidget(QString& title, QWidget* parent) : QWidget(parent)
     mainLayout->setSpacing(0);
     mainLayout->setContentsMargins(0, 0, 0, 0);
     setLayout(mainLayout);
-    setFixedHeight(25);
+    setFixedHeight(30);
     m_isMove = false;
 }
 

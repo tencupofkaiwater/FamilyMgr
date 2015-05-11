@@ -17,42 +17,41 @@
 #include <QPainter>
 #include "fm_sys_button.h"
 
-FMSysButton::FMSysButton(QString path, QString tipText, QWidget *parent) :
-    QPushButton(parent)
+FMSysButton::FMSysButton(QString path, QString tipText, QWidget* parent) : QPushButton(parent)
 {
-    pixmap.load(path);
+    m_pixmap.load(path);
     setWindowOpacity(0);
     setFlat(true);
-    btnWidth = pixmap.width() / 4;
-    btnHeight = pixmap.height();
-    setFixedSize(btnWidth,btnHeight);
+    m_btnWidth = m_pixmap.width() / 4;
+    m_btnHeight = m_pixmap.height();
+    setFixedSize(m_btnWidth, m_btnHeight);
     setToolTip(tipText);
-    status = NORMAL;
+    m_status = NORMAL;
 }
-void FMSysButton::enterEvent(QEvent *)
+void FMSysButton::enterEvent(QEvent*)
 {
-    status = ENTER;
+    m_status = ENTER;
     update();
 }
-void FMSysButton::mousePressEvent(QMouseEvent *)
+void FMSysButton::mousePressEvent(QMouseEvent*)
 {
-    status = PRESS;
+    m_status = PRESS;
     update();
 }
-void FMSysButton::mouseReleaseEvent(QMouseEvent *)
+void FMSysButton::mouseReleaseEvent(QMouseEvent*)
 {
-    status = ENTER;
+    m_status = ENTER;
     update();
     emit clicked();
 }
-void FMSysButton::leaveEvent(QEvent *)
+void FMSysButton::leaveEvent(QEvent*)
 {
-    status = NORMAL;
+    m_status = NORMAL;
     update();
 }
 
-void FMSysButton::paintEvent(QPaintEvent *)
+void FMSysButton::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
-    painter.drawPixmap(rect(), pixmap.copy(btnWidth * status, 0, btnWidth, btnHeight));
+    painter.drawPixmap(rect(), m_pixmap.copy(m_btnWidth * m_status, 0, m_btnWidth, m_btnHeight));
 }

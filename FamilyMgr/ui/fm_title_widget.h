@@ -50,6 +50,8 @@ private:
     bool m_isMove;
 
 	QLabel* m_titleLabel;
+	QLabel* m_loginLabel;
+	QLabel* m_registLabel;
     FMPushButton* m_btnSkin;
     FMSysButton* m_btnSetting;
     FMSysButton* m_btnMin;

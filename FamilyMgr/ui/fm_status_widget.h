@@ -22,7 +22,7 @@ class FMStatusWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit FMStatusWidget(QWidget *parent = 0);
+    explicit FMStatusWidget(QWidget* parent = 0);
     
 signals:
     

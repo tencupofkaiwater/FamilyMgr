@@ -43,7 +43,7 @@ FMSkinWidget::FMSkinWidget(QString picName, QWidget* parent) : m_bkPicName(picNa
 
 void FMSkinWidget::addSkin(QString name, QString picPath)
 {
-	m_skinMap.insert(name, picPath);
+	m_skinList.push_back(SkinPair(name, picPath));
 
 	QPushButton* btn = new QPushButton(this);
 	QIcon icon(picPath.left(picPath.indexOf(".")) + "_small.jpg");
@@ -54,8 +54,8 @@ void FMSkinWidget::addSkin(QString name, QString picPath)
 	connect(btn, SIGNAL(clicked()), m_signalMapper, SLOT(map()));
 	m_signalMapper->setMapping(btn, picPath);
 
-	m_gridLayout->addWidget(btn, (m_skinMap.size() + m_column) / m_column, m_skinMap.size() % m_column);
-	//m_gridLayout->setSpacing(0);
+	m_gridLayout->addWidget(btn, (m_skinList.size() - 1) / m_column, (m_skinList.size() - 1) % m_column);
+	m_gridLayout->setSpacing(0);
 }
 
 void FMSkinWidget::paintEvent(QPaintEvent*)

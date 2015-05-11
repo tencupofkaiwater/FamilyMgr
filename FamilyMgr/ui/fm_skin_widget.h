@@ -16,10 +16,13 @@
 */
 #pragma once
 
-#include <QMap>
+#include <QList>
+#include <QPair>
+#include <QSignalMapper>
 #include <QWidget>
 
-typedef QMap<QString, QString> SkinMap;
+typedef QPair<QString, QString> SkinPair;
+typedef QList<SkinPair> SkinList;
 
 class QGridLayout;
 
@@ -28,7 +31,7 @@ class FMSkinWidget : public QWidget
     Q_OBJECT
 public:
     explicit FMSkinWidget(QString picName, QWidget* parent = 0);
-	void addSkin(QString picPath, QString name);
+	void addSkin(QString name, QString picPath);
     
 signals:
     void changeSkin(QString);
@@ -41,7 +44,8 @@ protected:
 
 private:
     QString m_bkPicName;
-	SkinMap m_skinMap;
+	quint32 m_column;
+	SkinList m_skinList;
 	QGridLayout* m_gridLayout;
 	QSignalMapper* m_signalMapper;
 };

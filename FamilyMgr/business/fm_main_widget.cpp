@@ -56,28 +56,17 @@ MainWidget::MainWidget(QWidget* parent) : QWidget(parent)
 	connect(m_titleW, SIGNAL(doClose()), this, SLOT(doExit()));
 
 	// add skin
-	m_skinW->addSkin("愤怒的小鸟", "Resources/img/skin_angry_bird.jpg")
-	QStringList bkPicName;
-	bkPicName << "Resources/img/skin_angry_bird.jpg"
-		<< "Resources/img/skin_black_point.jpg"
-		<< "Resources/img/skin_blue_sky.jpg"
-		<< "Resources/img/skin_classic.jpg"
-		<< "Resources/img/skin_green_world.jpg"
-		<< "Resources/img/skin_old_wood.jpg"
-		<< "Resources/img/skin_pink_love.jpg"
-		<< "Resources/img/skin_red_thunder.jpg"
-		<< "Resources/img/skin_six_years.jpg";
-
-	QStringList tip;
-	tip << QStringLiteral("愤怒的小鸟")
-		<< QStringLiteral("优雅爵士")
-		<< QStringLiteral("蓝色天空")
-		<< QStringLiteral("经典皮肤")
-		<< QStringLiteral("青青世界") 
-		<< QStringLiteral("古典木纹")
-		<< QStringLiteral("粉色之恋")
-		<< QStringLiteral("红色惊雷")
-		<< QStringLiteral("卫士六周年");
+	m_skinW = new FMSkinWidget(m_bkPicName, this);
+	connect(m_skinW, SIGNAL(changeSkin(QString)), this, SLOT(setPicName(QString)));
+	m_skinW->addSkin(QStringLiteral("愤怒的小鸟"), "Resources/img/skin_angry_bird.jpg");
+	m_skinW->addSkin(QStringLiteral("优雅爵士"), "Resources/img/skin_black_point.jpg");
+	m_skinW->addSkin(QStringLiteral("蓝色天空"), "Resources/img/skin_blue_sky.jpg");
+	m_skinW->addSkin(QStringLiteral("经典皮肤"), "Resources/img/skin_classic.jpg");
+	m_skinW->addSkin(QStringLiteral("青青世界"), "Resources/img/skin_green_world.jpg");
+	m_skinW->addSkin(QStringLiteral("古典木纹"), "Resources/img/skin_old_wood.jpg");
+	m_skinW->addSkin(QStringLiteral("粉色之恋"), "Resources/img/skin_pink_love.jpg");
+	m_skinW->addSkin(QStringLiteral("红色惊雷"), "Resources/img/skin_red_thunder.jpg");
+	m_skinW->addSkin(QStringLiteral("卫士六周年"), "Resources/img/skin_six_years.jpg");
     
     // initialize tool bar 
     m_toolW = new FMToolWidget(this);
@@ -116,9 +105,6 @@ MainWidget::MainWidget(QWidget* parent) : QWidget(parent)
 
     // addition main widget layout
     setLayout(m_mainLayout);
-
-	m_skinW = new FMSkinWidget(m_bkPicName, this);
-	connect(m_skinW, SIGNAL(changeSkin(QString)), this, SLOT(setPicName(QString)));
 }
 
 void MainWidget::paintEvent(QPaintEvent *)

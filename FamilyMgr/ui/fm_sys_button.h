@@ -22,7 +22,7 @@ class FMSysButton : public QPushButton
 {
     Q_OBJECT
 public:
-    explicit FMSysButton(QString path, QString tipText, QWidget *parent = 0);
+    explicit FMSysButton(QString path, QString tipText, QWidget* parent = 0);
     
 signals:
     
@@ -30,16 +30,16 @@ public slots:
     
 private:
     enum buttonStatus{NORMAL, ENTER, PRESS, NOSTATUS};
-    buttonStatus status;
+    buttonStatus m_status;
 
-	QPixmap pixmap;
-    int btnWidth;
-    int btnHeight;
+	QPixmap m_pixmap;
+    int m_btnWidth;
+    int m_btnHeight;
 
 protected:
-    void paintEvent(QPaintEvent *);
-    void enterEvent(QEvent *);
-    void mousePressEvent(QMouseEvent *e);
-    void mouseReleaseEvent(QMouseEvent *e);
-    void leaveEvent(QEvent *);
+    void paintEvent(QPaintEvent*);
+    void enterEvent(QEvent*);
+    void mousePressEvent(QMouseEvent*);
+    void mouseReleaseEvent(QMouseEvent*);
+    void leaveEvent(QEvent*);
 };
